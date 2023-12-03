@@ -1,3 +1,3 @@
 # Glocal
 
-Glocal website
+For a school project
