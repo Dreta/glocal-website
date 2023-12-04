@@ -7,7 +7,7 @@ import { ImageBlock, MarkdownBlock, Page, WordRecordingBlock } from '../../data.
 import detailsHeader from './details-header.webp'
 import Markdown from 'react-markdown';
 import { dataHost } from '../../global.ts';
-import Search from "../index/Search.tsx";
+import Search from '../index/Search.tsx';
 
 function Image({ image }: { image: ImageBlock }) {
     return (

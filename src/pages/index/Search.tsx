@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
-import { dataHost } from "../../global.ts";
-import { PageRef } from "../../data.tsx";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleExclamation, faCircleQuestion, faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { dataHost } from '../../global.ts';
+import { PageRef } from '../../data.tsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleExclamation, faCircleQuestion, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-function SearchResults({ input }: { input: string }) {
+function SearchResults({ input, setInput }: { input: string, setInput: React.Dispatch<React.SetStateAction<string>> }) {
     const [data, setData] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
@@ -56,7 +56,7 @@ function SearchResults({ input }: { input: string }) {
         <div className='bg-bj-yellow-bg rounded-2xl flex flex-col items-center h-64 overflow-auto p-3'>
             {matches.map((match, index) =>
                 <div key={index} className='rounded-3xl w-full p-4 bg-bj-yellow-accent flex items-center'>
-                    <Link to={`/page/${match[0]}`}><p>{match[1].title}</p></Link>
+                    <Link onClick={() => setInput('')} to={`/page/${match[0]}`}><p>{match[1].title}</p></Link>
                 </div>)}
             {matches.length == 0 ?
                 <div className='flex flex-col items-center justify-center h-full p-2'>
@@ -81,7 +81,7 @@ export default function Search() {
             </div>
             <div className='transition-all duration-400 absolute w-full mt-4'
                  style={{ opacity: value.length == 0 ? 0 : 1, height: value.length == 0 ? '0' : '18rem' }}>
-                <SearchResults input={value} />
+                <SearchResults input={value} setInput={setValue} />
             </div>
         </div>
     )
