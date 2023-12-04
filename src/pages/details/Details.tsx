@@ -7,6 +7,7 @@ import { ImageBlock, MarkdownBlock, Page, WordRecordingBlock } from '../../data.
 import detailsHeader from './details-header.webp'
 import Markdown from 'react-markdown';
 import { dataHost } from '../../global.ts';
+import Search from "../index/Search.tsx";
 
 function Image({ image }: { image: ImageBlock }) {
     return (
@@ -123,9 +124,13 @@ export default function Details() {
 
     return (
         <div>
-            <div className='w-full sticky py-3 px-8 mb-8 lg:mb-32 bg-cover bg-center'
+            <div className='w-full sticky py-3 px-8 mb-8 lg:mb-32 bg-cover bg-center flex items-center'
                  style={{ backgroundImage: `url(${detailsHeader})` }}>
                 <Link to='/' className='font-display font-bold text-2xl text-white'>Beijing Speaks</Link>
+
+                <div className='ml-auto hidden lg:block w-72'>
+                    <Search />
+                </div>
             </div>
             <div className='px-8 sm:px-24 lg:px-32 xl:px-48'>
                 <h1 className='font-display font-bold text-4xl lg:text-6xl xl:text-7xl mb-3'>{parsedData.title}</h1>
