@@ -71,7 +71,7 @@ export default function Search() {
     const [value, setValue] = useState('')
 
     return (
-        <div>
+        <div className='relative'>
             <div className='bg-bj-yellow-bg rounded-full w-full px-5 py-3 mb-4'>
                 <input type='text'
                        className='bg-transparent w-full z-10 outline-none'
@@ -79,7 +79,7 @@ export default function Search() {
                        value={value}
                        onChange={e => setValue(e.target.value)} />
             </div>
-            <div className='transition-all duration-400'
+            <div className='transition-all duration-400 absolute w-full'
                  style={{ opacity: value.length == 0 ? 0 : 1, height: value.length == 0 ? '0' : '18rem' }}>
                 <SearchResults input={value} />
             </div>

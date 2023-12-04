@@ -30,19 +30,19 @@ function DesktopIndex() {
 function MobileIndex() {
     return (
         <div className='overflow-hidden h-screen w-screen'>
-            <div className='absolute -z-20 bottom-0 w-full bg-cover bg-center h-[40vh]' style={{backgroundImage: `url(${imageMobile})`}}></div>
-            <div className='absolute -z-10 bg-white rounded-full top-1/3 left-1/2 h-[100vh] w-[100vh]' style={{transform: 'translate(-50%, -50%)'}}></div>
+            <div className='flex h-full flex-col'>
+                <div className='bg-white h-2/3 px-16 py-24 w-full flex items-center flex-col'>
+                    <h1 className='text-5xl font-bold font-display mb-12'>
+                        Beijing<br />
+                        <span className='ml-24'>Speaks</span>
+                    </h1>
 
-            <div className='h-full px-16 py-32 flex items-center flex-col'>
-                <h1 className='text-5xl font-bold font-display mb-12'>
-                    Beijing<br />
-                    <span className='ml-24'>Speaks</span>
-                </h1>
+                    <p className='mb-8 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
 
-                <p className='mb-8 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua.</p>
-
-                <Search />
+                    <Search />
+                </div>
+                <div className='bg-cover bg-center w-full h-1/3' style={{backgroundImage: `url(${imageMobile})`}}></div>
             </div>
         </div>
     )
