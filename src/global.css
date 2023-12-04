@@ -31,3 +31,7 @@ h5 {
 h6 {
     @apply text-lg;
 }
+
+a {
+    @apply hover:text-blue-400 active:text-blue-500 transition-colors duration-100;
+}
