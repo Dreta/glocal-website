@@ -8,6 +8,7 @@ import detailsHeader from './details-header.webp'
 import Markdown from 'react-markdown';
 import { dataHost } from '../../global.ts';
 import Search from '../index/Search.tsx';
+import Footer from "./Footer.tsx";
 
 function Image({ image }: { image: ImageBlock }) {
     return (
@@ -132,7 +133,7 @@ export default function Details() {
                     <Search />
                 </div>
             </div>
-            <div className='px-8 sm:px-24 lg:px-32 xl:px-48'>
+            <div className='px-8 sm:px-24 lg:px-32 xl:px-48 mb-8'>
                 <h1 className='font-display font-bold text-4xl lg:text-6xl xl:text-7xl mb-3'>{parsedData.title}</h1>
                 <p className='text-gray-400 mb-5'>By {parsedData.author}, {new Date(parsedData.time).toLocaleDateString()}</p>
 
@@ -149,6 +150,12 @@ export default function Details() {
                     {renderAllBlocks(parsedData.content)}
                 </div>
             </div>
+
+            <div className='flex justify-center items-center w-full mb-8'>
+                <hr className='px-5 w-64' />
+            </div>
+
+            <Footer />
         </div>
     )
 }
