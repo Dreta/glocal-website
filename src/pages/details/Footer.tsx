@@ -10,6 +10,9 @@ export default function Footer() {
                 <p className='text-sm'>Except as otherwise noted, the text content found in this website is licensed
                     under a Creative Commons Attribution 4.0 International License, and the images and recordings belong
                     to their respective owners, used under a license to Beijing Speaks.</p>
+                <p className='text-sm'>Beijing Speaks is open source. The source code is available in <a
+                    href='https://gtihub.com/Dreta/glocal-website'>Dreta/glocal-website</a> and is licensed under the
+                    MIT license.</p>
             </div>
         </footer>
     )
