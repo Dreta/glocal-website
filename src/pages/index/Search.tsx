@@ -55,7 +55,7 @@ function SearchResults({ input, setInput }: { input: string, setInput: React.Dis
     return (
         <div className='bg-bj-yellow-bg rounded-2xl flex flex-col items-center h-64 overflow-auto p-3'>
             {matches.map((match, index) =>
-                <div key={index} className='rounded-3xl w-full p-4 bg-bj-yellow-accent flex items-center'>
+                <div key={index} className='rounded-3xl w-full mb-3 p-4 bg-bj-yellow-accent flex items-center'>
                     <Link onClick={() => setInput('')} to={`/page/${match[0]}`}><p>{match[1].title}</p></Link>
                 </div>)}
             {matches.length == 0 ?
