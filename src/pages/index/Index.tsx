@@ -12,15 +12,17 @@ function DesktopIndex() {
                         Beijing<br />
                         <span className='ml-24'>Speaks</span>
                     </h1>
-                    <p className='mb-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <p className='mb-8'>A rich history through the lens of a tiny postcard - that's Beijing
+                        Speaks, an introduction to our fascinating culture.</p>
 
                     <Search />
                 </div>
 
                 <div className='w-1/2 flex flex-col justify-center ml-[6vw] xl:ml-[10vw] relative'>
-                    <div className='absolute z-30 left-5 mt-12 rounded-xl bg-bj-yellow w-[32vw] xl:w-[24vw] h-[64vh]'></div>
-                    <img className='z-40 w-[32vw] xl:w-[24vw] h-[64vh] object-cover rounded-xl' src={imageDesktop} alt='Image of a tower in Beijing style' />
+                    <div
+                        className='absolute z-30 left-5 mt-12 rounded-xl bg-bj-yellow w-[32vw] xl:w-[24vw] h-[64vh]'></div>
+                    <img className='z-40 w-[32vw] xl:w-[24vw] h-[64vh] object-cover rounded-xl' src={imageDesktop}
+                         alt='Image of a tower in Beijing style' />
                 </div>
             </div>
         </div>
@@ -37,12 +39,13 @@ function MobileIndex() {
                         <span className='ml-24'>Speaks</span>
                     </h1>
 
-                    <p className='mb-8 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <p className='mb-8 text-sm'>A rich history through the lens of a tiny postcard - that's Beijing
+                        Speaks, an introduction to our fascinating culture.</p>
 
                     <Search />
                 </div>
-                <div className='bg-cover bg-center w-full h-1/3' style={{backgroundImage: `url(${imageMobile})`}}></div>
+                <div className='bg-cover bg-center w-full h-1/3'
+                     style={{ backgroundImage: `url(${imageMobile})` }}></div>
             </div>
         </div>
     )
