@@ -12,6 +12,14 @@ export interface WordRecordingBlock {
     englishLiteral: string
 }
 
+export interface SentenceRecordingBlock {
+    type: 'sentenceRecording',
+    url: string,
+    chinese: [string],
+    pinyin: [string],
+    english: string
+}
+
 export interface ImageBlock {
     type: 'image',
     url: string,
@@ -22,7 +30,7 @@ export interface Page {
     title: string,
     author: string,
     time: number,
-    content: [MarkdownBlock | WordRecordingBlock | ImageBlock]
+    content: [MarkdownBlock | WordRecordingBlock | SentenceRecordingBlock | ImageBlock]
 }
 
 export interface PageRef {

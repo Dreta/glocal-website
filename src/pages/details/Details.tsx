@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleExclamation, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { Link, useParams } from 'react-router-dom'
-import { ImageBlock, MarkdownBlock, Page, WordRecordingBlock } from '../../data.tsx'
+import {ImageBlock, MarkdownBlock, Page, SentenceRecordingBlock, WordRecordingBlock} from '../../data.tsx'
 
 import detailsHeader from './details-header.webp'
 import Markdown from 'react-markdown';
 import { dataHost } from '../../global.ts';
 import Search from '../index/Search.tsx';
 import Footer from './Footer.tsx';
-import {ImageDisplay, WordRecordingDisplay} from './blocks.tsx';
+import {ImageDisplay, SentenceRecordingDisplay, WordRecordingDisplay} from './blocks.tsx';
 
-function renderMarkdownBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock]): (React.JSX.Element | null)[] {
+function renderMarkdownBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock | SentenceRecordingBlock]): (React.JSX.Element | null)[] {
     return blocks.map((block, index) => {
         if (block.type == 'markdown') {
             return <div className='mb-5' key={index}><Markdown>{block.content}</Markdown></div>
@@ -20,7 +20,7 @@ function renderMarkdownBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordin
     })
 }
 
-function renderMiscBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock]): (React.JSX.Element | null)[] {
+function renderMiscBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock | SentenceRecordingBlock]): (React.JSX.Element | null)[] {
     return blocks.map((block, index) => {
         if (block.type == 'image') {
             return <div className='mb-8' key={index}><ImageDisplay image={block} /></div>
@@ -28,11 +28,14 @@ function renderMiscBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlo
         if (block.type == 'wordRecording') {
             return <div className='mb-8' key={index}><WordRecordingDisplay recording={block} /></div>
         }
+        if (block.type == 'sentenceRecording') {
+            return <div className='mb-8' key={index}><SentenceRecordingDisplay recording={block} /></div>
+        }
         return null
     })
 }
 
-function renderAllBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock]): (React.JSX.Element | null)[] {
+function renderAllBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBlock | SentenceRecordingBlock]): (React.JSX.Element | null)[] {
     return blocks.map((block, index) => {
         if (block.type == 'markdown') {
             return <div className='mb-5' key={index}><Markdown>{block.content}</Markdown></div>
@@ -42,6 +45,9 @@ function renderAllBlocks(blocks: [MarkdownBlock | ImageBlock | WordRecordingBloc
         }
         if (block.type == 'wordRecording') {
             return <div className='mb-5' key={index}><WordRecordingDisplay recording={block} /></div>
+        }
+        if (block.type == 'sentenceRecording') {
+            return <div className='mb-8' key={index}><SentenceRecordingDisplay recording={block} /></div>
         }
         return null
     })
