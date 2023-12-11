@@ -35,10 +35,10 @@ function SearchResults({ input, setInput }: { input: string, setInput: React.Dis
         )
     }
 
-    if (input.length < 3) {
+    if (input.length < 1) {
         return (
             <div className='bg-bj-yellow-bg rounded-2xl flex flex-col justify-center items-center h-64 p-5'>
-                <p className='text-center'>Please enter more than 3 letters.</p>
+                <p className='text-center'>Please enter more than 1 letter.</p>
             </div>
         )
     }
